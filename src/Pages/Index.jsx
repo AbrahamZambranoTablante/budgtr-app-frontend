@@ -15,7 +15,7 @@ export default function Index () {
         .then(res => res.json())
         .then(resJSON => setTransactions(resJSON))
         .catch(() => {
-            navigate("/unsuccessful-fetch")
+            navigate("/not-found")
         });
     }, [navigate]);
 

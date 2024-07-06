@@ -6,7 +6,7 @@ import Show from "./Pages/Show";
 import Edit from "./Pages/Edit";
 import New from "./Pages/New";
 import NotFound from "./Pages/NotFound";
-import UnsuccessfulFetch from "./Pages/UnsuccessfulFetch";
+
 
 function App() {
 
@@ -19,7 +19,6 @@ function App() {
           <Route path='/transactions/:id' element={ <Show /> } />
           <Route path='/transactions/:id/edit' element={ <Edit /> } />
           <Route path='/transactions/new' element={ <New /> } />
-          <Route path='/unsuccessful-fetch' element={ <UnsuccessfulFetch />} />
           <Route path='*' element={ <NotFound /> } />
         </Routes>
       </Router>

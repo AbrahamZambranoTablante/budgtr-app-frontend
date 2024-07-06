@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function TransactionDetails () {  
@@ -13,7 +13,7 @@ export default function TransactionDetails () {
         .then(res => res.json())
         .then(resJSON => setTransaction(resJSON))
         .catch(() =>{
-            navigate("/unsuccessfull-fetch");
+            navigate("/not-found");
         })
     }, [id, navigate]);
 
@@ -21,12 +21,14 @@ export default function TransactionDetails () {
 
     return(
         <>
-            <p className="">PURCHASE: {transactionName}</p>
+            <p className="">DETAIL: {transactionName}</p>
             <p className="">FROM: {from}</p>
             <p className="">AMOUNT: ${amount}</p>
             <p className="">DATE: {date}</p>
             <p className="">CATEGORY: {category}</p>
-            <p className="">ID: {id}</p>
+            <p className="">TRANSACTION ID: {id}</p>
+            <Link><button>EDIT</button></Link>
+            <button>DELETE</button>
         </>
     );
 };
