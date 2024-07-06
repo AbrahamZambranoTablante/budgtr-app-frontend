@@ -52,7 +52,7 @@ export default function NewTransactionForm () {
                 <label htmlFor="amount" className="">Amount: </label>
                 <input id="amount" type="number" value={newTransaction.amount} onChange={handleTextChange} required/>
                 <label htmlFor="date" className="">Date: </label>
-                <input id="date" type="text" value={newTransaction.date} onChange={handleTextChange} required/>
+                <input id="date" type="date" value={newTransaction.date} onChange={handleTextChange} required/>
                 <label htmlFor="from" className="">From: </label>
                 <input id="from" type="text" value={newTransaction.from} onChange={handleTextChange} required/>
                 <label htmlFor="category" className="">Category: </label>

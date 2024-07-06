@@ -55,14 +55,14 @@ export default function EditTransaction () {
 
     return(
         <>
-            EDit A Transaction:
+            Edit Transaction:
             <form className="" onSubmit={handleSubtmit}>
                 <label htmlFor="transactionName" className="">Transaction Name: </label>
                 <input id="transactionName" type="text" value={editTransaction.transactionName} onChange={handleTextChange} required/>
                 <label htmlFor="amount" className="">Amount: </label>
                 <input id="amount" type="number" value={editTransaction.amount} onChange={handleTextChange} required/>
                 <label htmlFor="date" className="">Date: </label>
-                <input id="date" type="text" value={editTransaction.date} onChange={handleTextChange} required/>
+                <input id="date" type="date" value={editTransaction.date} onChange={handleTextChange} required/>
                 <label htmlFor="from" className="">From: </label>
                 <input id="from" type="text" value={editTransaction.from} onChange={handleTextChange} required/>
                 <label htmlFor="category" className="">Category: </label>

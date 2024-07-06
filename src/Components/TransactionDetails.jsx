@@ -17,6 +17,15 @@ export default function TransactionDetails () {
         })
     }, [id, navigate]);
 
+    function deleteTransaction () {
+        fetch(`${API}/transactions/${id}`, {
+          method: "DELETE"
+        })
+          .then(() => {
+            navigate("/transactions")
+          })
+      }
+
     const { transactionName, amount, date, from, category } = transaction;
 
     return(
@@ -28,7 +37,7 @@ export default function TransactionDetails () {
             <p className="">CATEGORY: {category}</p>
             <p className="">TRANSACTION ID: {id}</p>
             <Link to={`/transactions/${id}/edit`}><button>EDIT</button></Link>
-            <button>DELETE</button>
+            <button onClick={deleteTransaction}>DELETE</button>
         </>
     );
 };
