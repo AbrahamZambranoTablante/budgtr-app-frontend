@@ -27,7 +27,7 @@ export default function TransactionDetails () {
             <p className="">DATE: {date}</p>
             <p className="">CATEGORY: {category}</p>
             <p className="">TRANSACTION ID: {id}</p>
-            <Link><button>EDIT</button></Link>
+            <Link to={`/transactions/${id}/edit`}><button>EDIT</button></Link>
             <button>DELETE</button>
         </>
     );

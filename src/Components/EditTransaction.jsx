@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function NewTransactionForm () {
+export default function EditTransaction () {
 
+    const { id } = useParams();
     const navigate = useNavigate();
     const API = import.meta.env.VITE_API_URL;
-    const [newTransaction, setNewTransaction] = useState({
+    const [editTransaction, setEditTransaction] = useState({
         transactionName: "",
         amount: 0,
         date: "",
@@ -13,14 +14,23 @@ export default function NewTransactionForm () {
         category: ""
     });
 
+    useEffect(() => {
+        fetch(`${API}/transactions/${id}`)
+        .then(res => res.json())
+        .then(resJSON => setEditTransaction(resJSON))
+        .catch(() => {
+            navigate('/not-found')
+        })
+    }, [])
+
     function handleTextChange (e) {
-        setNewTransaction({...newTransaction, [e.target.id]: e.target.value});
+        setEditTransaction({...editTransaction, [e.target.id]: e.target.value});
     }
 
-    function createTransaction () {
-        fetch(`${API}/transactions`, {
-            method: "POST",
-            body: JSON.stringify(newTransaction),
+    function updateTransaction () {
+        fetch(`${API}/transactions/${id}`, {
+            method: "PUT",
+            body: JSON.stringify(editTransaction),
             headers: {
                 "Content-Type": "application/json"
             }
@@ -33,8 +43,8 @@ export default function NewTransactionForm () {
 
     function handleSubtmit (e) {
         e.preventDefault();
-        createTransaction();
-        setNewTransaction({
+        updateTransaction();
+        setEditTransaction({
             transactionName: "",
             amount: 0,
             date: "",
@@ -45,16 +55,16 @@ export default function NewTransactionForm () {
 
     return(
         <>
-            Add A New Transaction:
+            EDit A Transaction:
             <form className="" onSubmit={handleSubtmit}>
                 <label htmlFor="transactionName" className="">Transaction Name: </label>
-                <input id="transactionName" type="text" value={newTransaction.transactionName} onChange={handleTextChange} required/>
+                <input id="transactionName" type="text" value={editTransaction.transactionName} onChange={handleTextChange} required/>
                 <label htmlFor="amount" className="">Amount: </label>
-                <input id="amount" type="number" value={newTransaction.amount} onChange={handleTextChange} required/>
+                <input id="amount" type="number" value={editTransaction.amount} onChange={handleTextChange} required/>
                 <label htmlFor="date" className="">Date: </label>
-                <input id="date" type="text" value={newTransaction.date} onChange={handleTextChange} required/>
+                <input id="date" type="text" value={editTransaction.date} onChange={handleTextChange} required/>
                 <label htmlFor="from" className="">From: </label>
-                <input id="from" type="text" value={newTransaction.from} onChange={handleTextChange} required/>
+                <input id="from" type="text" value={editTransaction.from} onChange={handleTextChange} required/>
                 <label htmlFor="category" className="">Category: </label>
                 <select id="category" onChange={handleTextChange} required>
                     <option value="Expense" >Expense</option>
