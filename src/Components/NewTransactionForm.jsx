@@ -26,7 +26,7 @@ export default function NewTransactionForm () {
             }
         })
         .then(() => {
-            navigate('/transactions')
+            navigate(`/transactions`);
         })
         .catch(error => console.error(error));
     };
@@ -57,6 +57,7 @@ export default function NewTransactionForm () {
                 <input id="from" type="text" value={newTransaction.from} onChange={handleTextChange} required/>
                 <label htmlFor="category" className="">Category: </label>
                 <select id="category" onChange={handleTextChange} required>
+                    <option></option>
                     <option value="Expense" >Expense</option>
                     <option value="Income" >Income</option>
                 </select>

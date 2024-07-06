@@ -36,7 +36,7 @@ export default function EditTransaction () {
             }
         })
         .then(() => {
-            navigate('/transactions')
+            navigate(`/transactions/${id}`)
         })
         .catch(error => console.error(error));
     };
