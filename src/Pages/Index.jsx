@@ -17,7 +17,7 @@ export default function Index () {
         .catch(() => {
             navigate("/unsuccessful-fetch")
         });
-    }, []);
+    }, [navigate]);
 
     console.log(transactions);
 

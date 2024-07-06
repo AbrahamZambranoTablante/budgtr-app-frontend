@@ -1,8 +1,9 @@
-
+import TransactionDetails from "../Components/TransactionDetails";
 export default function Show () {
     return(
         <>
-        Show one Transaction
+         Transaction Detail:
+         <TransactionDetails />
         </>
     );
 };
