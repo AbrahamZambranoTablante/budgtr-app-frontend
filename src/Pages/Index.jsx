@@ -24,8 +24,10 @@ export default function Index () {
 
     return(
         <>
-            <h2 className="">Total Income: {incomeSum.toFixed(2)}$</h2>
-            <h2 className="">Total Expenses: {expenseSum.toFixed(2)}$</h2>
+            <div className="summary-container">
+                <h2 className="">Total Income: {incomeSum.toFixed(2)}$</h2>
+                <h2 className="">Total Expenses: {expenseSum.toFixed(2)}$</h2>
+            </div>
             <h1>Transactions:</h1>
             {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
         </>

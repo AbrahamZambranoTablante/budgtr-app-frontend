@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./NavBar.css"
 export default function NavBar () {
 
     const navigate = useNavigate();
@@ -28,7 +29,6 @@ export default function NavBar () {
         } else {
             color = 'red';
         }
-        
         return color;
     }
 
@@ -40,10 +40,14 @@ export default function NavBar () {
 
     return(
         <>
-            <Link to={`/`}><button>Home</button></Link>
-            <Link to={`/transactions`}><button>All transactions</button></Link>
-            <Link to={`/transactions/new`}><button>New Transaction</button></Link>
-            <p className="" style={{color: balanceColor(balance)}}>Balance: {balance.toFixed(2)}$</p>
+            <div className="container">
+                <div className="links">
+                    <Link to={`/`}><p className="font">Home</p></Link>
+                    <Link to={`/transactions`}><p className="font">All transactions</p></Link>
+                    <Link to={`/transactions/new`}><p className="font">New Transaction</p></Link>
+                </div>
+                <p className="font" style={{color: balanceColor(balance)}}>Balance: {balance.toFixed(2)}$</p>
+            </div>
         </>
     );
 };
