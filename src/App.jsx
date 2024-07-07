@@ -6,6 +6,7 @@ import Show from "./Pages/Show";
 import Edit from "./Pages/Edit";
 import New from "./Pages/New";
 import NotFound from "./Pages/NotFound";
+import NavBar from './Components/NavBar';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Router>
+        <NavBar />
         <Routes>
           <Route path='/' element={ <Home/> } />
           <Route path='/transactions' element={ <Index /> } />

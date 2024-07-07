@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 export default function NewTransactionForm () {
 
     const navigate = useNavigate();
     const API = import.meta.env.VITE_API_URL;
     const [newTransaction, setNewTransaction] = useState({
+        id: nanoid(8),
         transactionName: "",
         amount: 0,
         date: "",
@@ -26,7 +28,7 @@ export default function NewTransactionForm () {
             }
         })
         .then(() => {
-            navigate(`/transactions`);
+            navigate(`/transactions/${newTransaction.id}`);
         })
         .catch(error => console.error(error));
     };
