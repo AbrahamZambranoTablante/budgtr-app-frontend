@@ -32,7 +32,7 @@ export default function TransactionDetails () {
         <>
             <p className="">DETAIL: {transactionName}</p>
             <p className="">FROM: {from}</p>
-            <p className="">AMOUNT: ${amount}</p>
+            <p className="">AMOUNT: {category === "Expense" ? `-${amount}` : `+${amount}`}$</p>
             <p className="">DATE: {date}</p>
             <p className="">CATEGORY: {category}</p>
             <p className="">TRANSACTION ID: {id}</p>

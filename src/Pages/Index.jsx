@@ -19,10 +19,15 @@ export default function Index () {
         });
     }, [navigate]);
 
-    console.log(transactions);
+    const incomeSum = transactions.filter(trans => trans.category === "Income").reduce((sum, {amount}) => sum + amount, 0);
+    const expenseSum = transactions.filter(trans => trans.category === "Expense").reduce((sum, {amount}) => sum - amount, 0);
+    const balance = incomeSum + expenseSum;
 
     return(
         <>
+            <h2 className="">Total Income: {incomeSum}</h2>
+            <h2 className="">Total Expenses: {expenseSum}</h2>
+            <h2 className="">Balance: {balance.toFixed(2)}</h2>
             <h1>Transactions:</h1>
             {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
         </>
