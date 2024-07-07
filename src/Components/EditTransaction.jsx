@@ -6,6 +6,8 @@ export default function EditTransaction () {
     const { id } = useParams();
     const navigate = useNavigate();
     const API = import.meta.env.VITE_API_URL;
+
+    
     const [editTransaction, setEditTransaction] = useState({
         transactionName: "",
         amount: 0,
@@ -13,15 +15,22 @@ export default function EditTransaction () {
         from: "",
         category: ""
     });
+    
+    function formatDate ( unformattedDate ) {
+        let formattedDate = unformattedDate.split("/");
+        formattedDate.unshift(formattedDate.pop());
+        return formattedDate.join("-");
+      }
 
     useEffect(() => {
         fetch(`${API}/transactions/${id}`)
         .then(res => res.json())
-        .then(resJSON => setEditTransaction(resJSON))
+        .then(resJSON => setEditTransaction({...resJSON, date: formatDate(resJSON.date)}))
         .catch(() => {
             navigate('/not-found')
         })
     }, [])
+    
 
     function handleTextChange (e) {
         setEditTransaction({...editTransaction, [e.target.id]: e.target.value});
