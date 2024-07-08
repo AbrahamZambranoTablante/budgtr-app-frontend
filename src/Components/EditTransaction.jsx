@@ -64,23 +64,25 @@ export default function EditTransaction () {
 
     return(
         <>
-            Edit Transaction:
-            <form className="" onSubmit={handleSubtmit}>
-                <label htmlFor="transactionName" className="">Transaction Name: </label>
-                <input id="transactionName" type="text" value={editTransaction.transactionName} onChange={handleTextChange} required/>
-                <label htmlFor="amount" className="">Amount: </label>
-                <input id="amount" type="number" value={editTransaction.amount} onChange={handleTextChange} required/>
-                <label htmlFor="date" className="">Date: </label>
-                <input id="date" type="date" value={editTransaction.date} onChange={handleTextChange} required/>
-                <label htmlFor="from" className="">From: </label>
-                <input id="from" type="text" value={editTransaction.from} onChange={handleTextChange} required/>
-                <label htmlFor="category" className="">Category: </label>
-                <select id="category" onChange={handleTextChange} required>
-                    <option value="Expense" >Expense</option>
-                    <option value="Income" >Income</option>
-                </select>
-                <input type='submit' value="submit"/>
-            </form>
+            <h1>Edit Transaction:</h1>
+            <div className="form">
+                <form className="" onSubmit={handleSubtmit}>
+                    <label htmlFor="transactionName" className="">Transaction Name: </label><br/>
+                    <input id="transactionName" type="text" value={editTransaction.transactionName} onChange={handleTextChange} required/><br/>
+                    <label htmlFor="amount" className="">Amount: </label><br/>
+                    <input id="amount" type="number" value={editTransaction.amount} onChange={handleTextChange} required/><br/>
+                    <label htmlFor="date" className="">Date: </label><br/>
+                    <input id="date" type="date" value={editTransaction.date} onChange={handleTextChange} required/><br/>
+                    <label htmlFor="from" className="">From: </label><br/>
+                    <input id="from" type="text" value={editTransaction.from} onChange={handleTextChange} required/><br/>
+                    <label htmlFor="category" className="">Category: </label><br/>
+                    <select id="category" onChange={handleTextChange} required>
+                        <option value="Expense" >Expense</option>
+                        <option value="Income" >Income</option>
+                    </select><br/>
+                    <input className="submit" type='submit' value="submit"/>
+                </form>
+            </div>
         </>
     );
 };

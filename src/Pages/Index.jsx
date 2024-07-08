@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Transaction from "../Components/Transaction";
 import { useNavigate } from "react-router-dom";
+import "./Index.css"
 
 export default function Index () {
 
@@ -26,10 +27,12 @@ export default function Index () {
         <>
             <div className="summary-container">
                 <h2 className="">Total Income: {incomeSum.toFixed(2)}$</h2>
-                <h2 className="">Total Expenses: {expenseSum.toFixed(2)}$</h2>
+                <h2 className="">Total Expense: {expenseSum.toFixed(2)}$</h2>
             </div>
-            <h1>Transactions:</h1>
-            {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
+            <div className="transactions-list">
+                <h1>Transactions:</h1>
+                {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
+            </div>
         </>
     );
 };

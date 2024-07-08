@@ -5,7 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(0, 0, 0, 0.87);
-  background-color: #b9b4af;
+  background-color: rgba(249, 249, 134, 0.683);
+  width: fit-content;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

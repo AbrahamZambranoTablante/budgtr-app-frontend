@@ -1,8 +1,11 @@
 import EditTransaction from "../Components/EditTransaction";
+import "./New.css"
 export default function Edit () {
     return(
         <>
-            <EditTransaction />
+           <div className="form-container">
+                <EditTransaction />
+            </div>
         </>
     );
 };

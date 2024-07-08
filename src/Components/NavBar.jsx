@@ -42,7 +42,7 @@ export default function NavBar () {
         <>
             <div className="container">
                 <div className="links">
-                    <Link to={`/`}><p className="font">Home</p></Link>
+                    <Link to={`/`}><p className="font">Budgtr</p></Link>
                     <Link to={`/transactions`}><p className="font">All transactions</p></Link>
                     <Link to={`/transactions/new`}><p className="font">New Transaction</p></Link>
                 </div>

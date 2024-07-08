@@ -1,0 +1,21 @@
+.container-info {
+    text-align: center;
+    background-color: aliceblue;
+    padding-top: 1px;
+    text-shadow: 1px 1px 2px grey;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: rgb(44, 44, 44) 0px 3px 8px;
+}
+
+.details-container {
+    padding: 10px;
+}
+
+button {
+    background-color: green;
+    border: none;
+    margin: 0px 5px;
+    border-radius: 2px;
+}
+

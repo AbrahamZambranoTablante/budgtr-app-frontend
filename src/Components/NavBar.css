@@ -3,7 +3,7 @@
     color:black;
     border: none;
     background-color: transparent;
-    font-size: 12px;
+    font-size: 8.5px;
     margin: 2px 7px;
     text-shadow: 1px 1px 2px grey;
 }
@@ -21,4 +21,13 @@ a {
     background-color: aliceblue;
     justify-content: center;
     align-items: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: rgb(44, 44, 44) 0px 3px 8px;
+}
+
+@media (width >= 476px ) {
+    .font{
+        font-size: 15px;
+    }
 }

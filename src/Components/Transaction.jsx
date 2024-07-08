@@ -5,9 +5,11 @@ export default function Transaction ({trans}) {
 
     return(
         <>
-            <Link to={`/transactions/${id}`}><p className="">{transactionName}</p></Link>
-            <p className="">{date}</p>
-            <p className="">{category === "Expense" ? `-${amount}` : `+${amount}`}$</p><hr/>
+            <div className="transaction-container">
+                <Link to={`/transactions/${id}`}><p className="transaction-title">{transactionName}</p></Link>
+                <p className="transaction-info">{date}</p>
+                <p className="transaction-info">{category === "Expense" ? `-${amount}` : `+${amount}`}$</p>
+            </div>
         </>
     );
 };
