@@ -12,7 +12,7 @@ import NavBar from './Components/NavBar';
 function App() {
 
   return (
-    <div className='full-container'>
+    <>
       <Router>
         <NavBar />
         <Routes>
@@ -24,7 +24,7 @@ function App() {
           <Route path='*' element={ <NotFound /> } />
         </Routes>
       </Router>
-    </div>
+    </>
   )
 }
 
