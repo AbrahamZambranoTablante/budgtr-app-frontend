@@ -26,6 +26,10 @@ a {
     box-shadow: rgb(44, 44, 44) 0px 3px 8px;
 }
 
+.font:active {
+    text-shadow: none;
+}
+
 @media (width >= 476px ) {
     .font{
         font-size: 15px;

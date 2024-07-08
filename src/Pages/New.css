@@ -25,3 +25,22 @@
         margin-top: 15px;
     }
 }
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(69, 104, 17);
+}
+
+button:active {
+    background-color: green;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+.submit:active {
+    background-color: green;
+}
+

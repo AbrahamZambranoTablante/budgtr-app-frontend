@@ -24,11 +24,22 @@
     .transaction-title{
         color: green;
     }
+
+    .transaction-title:hover {
+        cursor: pointer;
+        color: rgb(0, 0, 0);
+    }
+    
+    .transaction-title:active {
+        text-shadow: none;
+    }
 }
 
 .transaction-container {
     display: flex;
 }
+
+
 
 @media (width >= 450px ) {
     .transactions-list {

@@ -80,7 +80,7 @@ export default function EditTransaction () {
                         <option value="Expense" >Expense</option>
                         <option value="Income" >Income</option>
                     </select><br/>
-                    <input className="submit" type='submit' value="submit"/>
+                    <input className="submit" type='submit' value="Submit"/>
                 </form>
             </div>
         </>

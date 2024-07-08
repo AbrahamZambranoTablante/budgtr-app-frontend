@@ -6,7 +6,7 @@ export default function Home () {
             <div className="home-container">
                 <h1>Budgtr</h1>
                 <p>"Master Your Money, Simplify Your Life"</p>
-                <img src="/vecteezy_3d-gold-coin-no-background_32161163.png" alt="golden coin" width="300" height="300"/>
+                <img src="/benjamin.png" alt="golden coin" width="300" height="300"/>
                 <Link to={"/transactions"}>
                     <button>Start</button>
                 </Link>
