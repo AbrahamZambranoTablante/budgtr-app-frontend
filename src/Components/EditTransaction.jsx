@@ -76,7 +76,7 @@ export default function EditTransaction () {
                     <label htmlFor="from" className="">From: </label><br/>
                     <input id="from" type="text" value={editTransaction.from} onChange={handleTextChange} required/><br/>
                     <label htmlFor="category" className="">Category: </label><br/>
-                    <select id="category" onChange={handleTextChange} required>
+                    <select id="category" className="input-field" onChange={handleTextChange} required>
                         <option value="Expense" >Expense</option>
                         <option value="Income" >Income</option>
                     </select><br/>

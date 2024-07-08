@@ -15,6 +15,19 @@
 
     input {
         text-align: center;
+        background-color: rgb(233, 233, 233);
+        color: black;
+        border: 1px solid lightgrey;
+    }
+
+    .input-field {
+        background-color: rgb(233, 233, 233);
+        color: black;
+        border: 1px solid lightgrey;
+    }
+
+    option {
+        background-color: aliceblue;
     }
 
     .submit {
@@ -23,6 +36,7 @@
         border-radius: 5px;
         padding: 5px 15px;
         margin-top: 15px;
+        color: white;
     }
 }
 
