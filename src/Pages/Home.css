@@ -9,8 +9,8 @@
     border-bottom-right-radius: 20px;
     box-shadow: rgb(44, 44, 44) 0px 3px 8px;
 
-    h1 {
-        font-size: 55px;
+    .app-title {
+        font-size: 370%;
         font-weight: bolder;
         text-decoration:underline 2px green;
     }
@@ -38,9 +38,9 @@
     }
 }
 
-@media (width < 450px ) {
-
-    h1 {
-        font-size: 20px;
+@media (width < 400px ) {
+    img {
+        width: 70%;
+        height: 70%;
     }
 }

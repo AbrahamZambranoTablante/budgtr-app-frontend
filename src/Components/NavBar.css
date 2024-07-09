@@ -30,14 +30,15 @@ a {
     text-shadow: none;
 }
 
+@media (width > 700px ) {
+    .font{
+        font-size: 9px;
+    }
+}
+
 @media (width > 1000px ) {
     .font{
         font-size: 15px;
     }
 }
 
-@media (width > 700px ) {
-    .font{
-        font-size: 9px;
-    }
-}
