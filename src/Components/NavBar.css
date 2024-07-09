@@ -8,6 +8,20 @@
     text-shadow: 1px 1px 2px grey;
 }
 
+.logo {
+    
+    text-decoration: none;
+    color:black;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    margin: 2px 7px;
+    text-shadow: 1px 1px 2px grey;
+    text-decoration: underline solid green;
+    font-weight: bold;
+    
+}
+
 a {
     text-decoration: none;
 }
