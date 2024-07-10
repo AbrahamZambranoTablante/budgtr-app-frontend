@@ -5,7 +5,7 @@ export default function New () {
         <>
             <div className="form-container">
                 <NewTransactionForm />
-                <img className="benjamin" src="/benjamin.png" alt="benjamin franklin portrait" width="300" height="340"/>
+                {/* <img className="benjamin" src="/benjamin.png" alt="benjamin franklin portrait" width="300" height="340"/> */}
             </div>
         </>
     );
