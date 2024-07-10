@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function TransactionDetails () {  
+export default function TransactionDetails ({reformat}) {  
 
     const navigate = useNavigate();
     const { id } = useParams();
@@ -27,6 +27,8 @@ export default function TransactionDetails () {
       }
 
     const { transactionName, amount, date, from, category } = transaction;
+
+    console.log(typeof date);
 
     return(
         <>

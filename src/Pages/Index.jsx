@@ -3,7 +3,7 @@ import Transaction from "../Components/Transaction";
 import { useNavigate } from "react-router-dom";
 import "./Index.css"
 
-export default function Index ({incomeSum, expenseSum}) {
+export default function Index () {
 
     const navigate = useNavigate();
 
@@ -20,19 +20,18 @@ export default function Index ({incomeSum, expenseSum}) {
         });
     }, [navigate]);
 
+    const incomeSum = transactions.filter(trans => trans.category === "Income").reduce((sum, {amount}) => sum + +amount, 0);
+    const expenseSum = transactions.filter(trans => trans.category === "Expense").reduce((sum, {amount}) => sum - +amount, 0);
+
     return(
         <>
-            <div className="whole-container">
-                <div className="summary-container">
-                    <h2 className="">Total Income: {incomeSum.toFixed(2)}$</h2>
-                    <h2 className="">Total Expense: {expenseSum.toFixed(2)}$</h2>
-                </div>
-                <div className="transactions-list">
-                    <h1>Transactions:</h1>
-                    <div className="list-container">
-                        {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
-                    </div>
-                </div>
+            <div className="summary-container">
+                <h2 className="">Total Income: {incomeSum.toFixed(2)}$</h2>
+                <h2 className="">Total Expense: {expenseSum.toFixed(2)}$</h2>
+            </div>
+            <div className="transactions-list">
+                <h1>Transactions:</h1>
+                {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
             </div>
         </>
     );
