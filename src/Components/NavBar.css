@@ -1,4 +1,4 @@
-.font {
+.font, .logo {
     text-decoration: none;
     color:black;
     border: none;
@@ -9,17 +9,10 @@
 }
 
 .logo {
-    
-    text-decoration: none;
-    color:black;
-    border: none;
-    background-color: transparent;
     font-size: 8px;
     margin: 2px 7px;
-    text-shadow: 1px 1px 2px grey;
     text-decoration: underline solid green;
     font-weight: bold;
-    
 }
 
 a {
