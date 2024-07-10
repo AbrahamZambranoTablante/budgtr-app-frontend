@@ -14,7 +14,7 @@
     color:black;
     border: none;
     background-color: transparent;
-    font-size: 15px;
+    font-size: 8px;
     margin: 2px 7px;
     text-shadow: 1px 1px 2px grey;
     text-decoration: underline solid green;
@@ -48,10 +48,16 @@ a {
     .font{
         font-size: 9px;
     }
+    .logo{
+        font-size: 9px;
+    }
 }
 
 @media (width > 1000px ) {
     .font{
+        font-size: 15px;
+    }
+    .logo{
         font-size: 15px;
     }
 }
