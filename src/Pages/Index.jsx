@@ -28,7 +28,9 @@ export default function Index ({incomeSum, expenseSum}) {
             </div>
             <div className="transactions-list">
                 <h1>Transactions:</h1>
-                {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
+                <div className="list-container">
+                    {transactions.map(trans => <Transaction key={trans.id} trans={trans} />)}
+                </div>
             </div>
         </>
     );

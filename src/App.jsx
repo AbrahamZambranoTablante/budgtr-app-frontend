@@ -23,7 +23,7 @@ function App() {
         .catch((error) => {
             console.error(error);
         });
-    }, []);
+    }, [transactions]);
 
   const incomeSum = transactions.filter(trans => trans.category === "Income").reduce((sum, {amount}) => sum + +amount, 0);
   const expenseSum = transactions.filter(trans => trans.category === "Expense").reduce((sum, {amount}) => sum - +amount, 0);
