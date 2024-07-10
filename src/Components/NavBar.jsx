@@ -1,22 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css"
-export default function NavBar () {
-
-    const navigate = useNavigate();
-
-    const [transactions, setTransactions] = useState([]);
-
-    const API = import.meta.env.VITE_API_URL;
-
-    useEffect(() => {
-        fetch(`${API}/transactions`)
-        .then(res => res.json())
-        .then(resJSON => setTransactions(resJSON))
-        .catch(() => {
-            navigate("/not-found")
-        });
-    }, [navigate]);
+export default function NavBar ({balance}) {
 
     function balanceColor (balance) {
         let color = '';
@@ -31,12 +15,6 @@ export default function NavBar () {
         }
         return color;
     }
-
-
-
-    const incomeSum = transactions.filter(trans => trans.category === "Income").reduce((sum, {amount}) => sum + +amount, 0);
-    const expenseSum = transactions.filter(trans => trans.category === "Expense").reduce((sum, {amount}) => sum - +amount, 0);
-    const balance = incomeSum + expenseSum;
 
     return(
         <>
