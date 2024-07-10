@@ -9,6 +9,7 @@
     box-shadow: rgb(44, 44, 44) 0px 3px 8px;
 }
 
+
 .transactions-list {
     background-color: aliceblue;
     text-shadow: 1px 1px 2px grey;
@@ -16,6 +17,7 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: rgb(44, 44, 44) 0px 3px 8px;
+
 
     .transaction-info{
         margin: 16px 10px;
@@ -34,6 +36,7 @@
         text-shadow: none;
     }
 }
+
 
 .transaction-container {
     display: flex;
