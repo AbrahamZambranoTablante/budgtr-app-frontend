@@ -28,7 +28,6 @@ export default function TransactionDetails ({reformat}) {
 
     const { transactionName, amount, date, from, category } = transaction;
 
-    console.log(typeof date);
 
     return(
         <>

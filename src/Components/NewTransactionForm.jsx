@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 
-export default function NewTransactionForm () {
+export default function NewTransactionForm ({setTransactions, reformat}) {
 
     const navigate = useNavigate();
     const API = import.meta.env.VITE_API_URL;
@@ -22,15 +22,21 @@ export default function NewTransactionForm () {
     function createTransaction () {
         fetch(`${API}/transactions`, {
             method: "POST",
-            body: JSON.stringify(newTransaction),
+            body: JSON.stringify({...newTransaction, date: reformat(newTransaction.date)}),
             headers: {
                 "Content-Type": "application/json"
             }
         })
-        .then(() => {
-            navigate(`/transactions/${newTransaction.id}`);
+        .then((res) => {
+            res.json()
+            .then(resJSON => {
+                setTransactions(resJSON);
+            })
         })
         .catch(error => console.error(error));
+
+        navigate(`/transactions/`);
+
     };
 
     function handleSubtmit (e) {
