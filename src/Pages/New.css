@@ -11,14 +11,14 @@
     text-shadow: 1px 1px 2px grey;
 }
 
-/* .benjamin {
+.benjamin {
     opacity: 0.07;
     margin-bottom: 20%;
-} */
+}
 
 .form{
     text-align: center;
-    /* position: absolute; */
+    position: absolute;
 
     input {
         text-align: center;
