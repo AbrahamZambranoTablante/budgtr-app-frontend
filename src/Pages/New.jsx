@@ -1,10 +1,10 @@
 import NewTransactionForm from "../Components/NewTransactionForm";
 import "./New.css"
-export default function New ({setTransactions, reformat}) {
+export default function New ({/*setTransactions,*/ reformat}) {
     return(
         <>
             <div className="form-container">
-                <NewTransactionForm />
+                <NewTransactionForm reformat={reformat}/>
             </div>
         </>
     );

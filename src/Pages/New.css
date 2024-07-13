@@ -18,7 +18,7 @@
 
 .form{
     text-align: center;
-    position: absolute;
+    /* position: absolute; */
 
     input {
         text-align: center;

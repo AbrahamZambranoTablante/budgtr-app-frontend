@@ -3,7 +3,7 @@ import Transaction from "../Components/Transaction";
 import { useNavigate } from "react-router-dom";
 import "./Index.css"
 
-export default function Index ({expenseSum, incomeSum}) {
+export default function Index (/*{expenseSum, incomeSum}*/) {
 
     const navigate = useNavigate();
 
@@ -20,8 +20,8 @@ export default function Index ({expenseSum, incomeSum}) {
         });
     }, [navigate]);
 
-    // const incomeSum = transactions.filter(trans => trans.category === "Income").reduce((sum, {amount}) => sum + +amount, 0);
-    // const expenseSum = transactions.filter(trans => trans.category === "Expense").reduce((sum, {amount}) => sum - +amount, 0);
+     const incomeSum = transactions.filter(trans => trans.category === "Income").reduce((sum, {amount}) => sum + +amount, 0);
+     const expenseSum = transactions.filter(trans => trans.category === "Expense").reduce((sum, {amount}) => sum - +amount, 0);
 
     return(
         <>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 
-export default function NewTransactionForm ({setTransactions, reformat}) {
+export default function NewTransactionForm ({/*setTransactions,*/ reformat}) {
 
     const navigate = useNavigate();
     const API = import.meta.env.VITE_API_URL;
@@ -27,15 +27,14 @@ export default function NewTransactionForm ({setTransactions, reformat}) {
                 "Content-Type": "application/json"
             }
         })
-        .then((res) => {
-            res.json()
+        .then((/*res*/) => {
+            /*res.json()
             .then(resJSON => {
                 setTransactions(resJSON);
-            })
+            })*/
+            navigate(`/transactions/${newTransaction.id}`);
         })
         .catch(error => console.error(error));
-
-        navigate(`/transactions/`);
 
     };
 
